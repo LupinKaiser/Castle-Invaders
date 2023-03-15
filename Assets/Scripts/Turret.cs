@@ -35,10 +35,16 @@ public class Turret : MonoBehaviour
 
 	public Transform firePoint;
 
+	public float countDown = 10f;
+	public float time = 0f;
+
+	public GameObject deathEffect;
+
 	// Use this for initialization
 	void Start()
 	{
 		InvokeRepeating("UpdateTarget", 0f, 0.5f);
+		time = countDown;
 	}
 
 	void UpdateTarget()
@@ -71,6 +77,16 @@ public class Turret : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		time -= 1 * Time.deltaTime;
+
+		if (time <= 0)
+        {
+			FindObjectOfType<AudioManager>().Play("Death");
+			Destroy(gameObject);
+			GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+			Destroy(effect, 5f);
+		}
+
 		if (target == null)
 		{
 			if (useLaser)
@@ -111,6 +127,7 @@ public class Turret : MonoBehaviour
 		Quaternion lookRotation = Quaternion.LookRotation(dir);
 		Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
 		partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+		
 	}
 
 	void Laser()

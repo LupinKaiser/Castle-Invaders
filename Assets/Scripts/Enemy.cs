@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
 
 		if (health <= 0 && !isDead)
 		{
+			FindObjectOfType<AudioManager>().Play("Death");
 			Die();
 		}
 	}
@@ -45,7 +46,6 @@ public class Enemy : MonoBehaviour
 
 	void Die()
 	{
-		FindObjectOfType<AudioManager>().Play("Death");
 		isDead = true;
 
 		PlayerStats.Money += worth;

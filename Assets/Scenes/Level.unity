@@ -2652,6 +2652,8 @@ GameObject:
   - component: {fileID: 373966308}
   - component: {fileID: 373966309}
   - component: {fileID: 373966310}
+  - component: {fileID: 373966312}
+  - component: {fileID: 373966311}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -2730,6 +2732,36 @@ MonoBehaviour:
   spawnPoint: {fileID: 612183783}
   timeBetweenWaves: 15
   enemy: {fileID: 5112166403545171901, guid: 982a8fcc8f10871459e6743db411b697, type: 3}
+--- !u!114 &373966311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373966304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c226ae0d5a91f48b64e02f53a46319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 612183783}
+  timeBetweenWaves: 20
+  enemy: {fileID: 2137468079647562544, guid: ca581a8dce88f8f4ba7afa35a3cd0b3a, type: 3}
+--- !u!114 &373966312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373966304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693266336db473d44b9bf4743e28cdd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 612183783}
+  timeBetweenWaves: 15
+  enemy: {fileID: 1079066054588667402, guid: c74ee17bdc2f2b143aad315625284c42, type: 3}
 --- !u!1 &381230176
 GameObject:
   m_ObjectHideFlags: 0
@@ -6685,8 +6717,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - soundName: Death
     clip: {fileID: 8300000, guid: 0d5606ab5438edc4a90b75858bed4f0a, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 3
     source: {fileID: 0}
   - soundName: 
     clip: {fileID: 0}
